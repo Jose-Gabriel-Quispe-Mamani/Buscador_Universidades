@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #E0E0E0; /* Texto claro para mejor visibilidad */
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 50px;
+}
+
+.video-background video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca el video detrás del contenido */
+}
+
+.container {
+    max-width: 5000px;
+    width: 100%;
+    background-color: rgba(0, 0, 20, 0.7);
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #00aaff; /* Borde azul brillante */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #E0E0E0;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.search-form label {
+    font-weight: bold;
+    color: #555;
+}
+
+.search-form input, .search-form button {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #111;
+    color: #00aaff;
+}
+
+.search-form button {
+    grid-column: span 2;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+.results {
+    margin-top: 20px;
+    min-height: 200px; 
+    max-height: 400px; 
+    overflow-y: auto;
+    background-color: rgba(0, 0, 20, 0.6);
+    padding: 15px;
+    border-radius: 12px;
+
+}
+
+.result-header, .result-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #c5a99d;
+    justify-items: center; 
+    align-items: center;
+    border-radius: 40px;
+
+}
+
+.result-header {
+    background-color: #0056b3;
+    font-weight: bold;
+    color: #333;
+}
+
+.result-row {
+    background-color: rgba(0, 0, 20, 0.5);
+    color: #CCCCCC;
+}
+
+.result-row:nth-child(even) {
+    background-color: rgba(0, 0, 20, 0.4);
+}
+
+/* Estilo para el <select> y sus opciones */
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    color: #00aaff; /* Texto azul brillante */
+    background-color: #111; /* Fondo oscuro */
+    border: 1px solid #ffffff; /* Borde oscuro */
+    border-radius: 4px;
+    appearance: none; /* Oculta el estilo predeterminado del navegador */
+    -webkit-appearance: none; /* Para navegadores basados en WebKit */
+    -moz-appearance: none; /* Para Firefox */
+}
+
+/* Flecha personalizada del <select> (puede que no funcione en todos los navegadores) */
+select::-ms-expand {
+    display: none; /* Oculta la flecha en IE y Edge */
+}
+
+select:hover {
+    border-color: #00aaff; /* Borde cambia al azul brillante al pasar el ratón */
+}
+
+option {
+    background-color: #111; /* Fondo oscuro en las opciones desplegables */
+    color: #00aaff; /* Texto azul brillante */
+}
+
+/* Si quieres personalizar un menú desplegable dentro de un formulario */
+.search-form select {
+    background-color: #111;
+    color: #00aaff;
+}
+
+.btn-mapa {
+    display: inline-block;
+    padding: 10px 20px;  
+    background-color: #111;  
+    color: #00aaff; 
+    text-align: center; 
+    text-decoration: none;  
+    border-radius: 100px;  
+    font-size: 14px;  
+    transition: background-color 0.3s ease;  
+}
+
+.btn-mapa:hover {
+    background-color: #0026ff;
+}
