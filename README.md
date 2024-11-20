@@ -4,7 +4,7 @@
         docker build -t universidades .
         ```
 
-- Creacion del contenedor en el puerto 8097
+- Creacion del contenedor
     -   ```sh
         docker run -d -p 8094:80 universidades
         ```
