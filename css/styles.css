@@ -1,39 +1,48 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+    width: 100%; /* Asegura que el body ocupe todo el ancho de la ventana */
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: Arial, sans-serif;
-    color: #E0E0E0; /* Texto claro para mejor visibilidad */
+    background: url('../img/Logo SUNEDU.jpg') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 50px;
-}
-
-.video-background video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Coloca el video detrás del contenido */
+    align-items: center; /* Alinea el contenedor verticalmente */
+    min-height: 100%; /* Asegura que el body se expanda por completo */
 }
 
 .container {
-    max-width: 5000px;
-    width: 100%;
-    background-color: rgba(0, 0, 20, 0.7);
+    width: 100%; /* Ajusta el ancho del contenedor al 100% del ancho de la ventana */
+    height: 100%; /* Ajusta el alto del contenedor al 100% del alto de la ventana */
+    background: rgba(255, 255, 255, 0.5); /* Fondo blanco con algo de transparencia */
     padding: 20px;
-    border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #00aaff; /* Borde azul brillante */
+    overflow: hidden; /* Evita el desbordamiento de contenido */
+    display: flex;
+    flex-direction: column;
+    margin: auto; /* Centra horizontalmente el contenedor */
 }
 
 h1, h2 {
-    text-align: center;
-    color: #E0E0E0;
+    font-size: 2rem;          /* Aumenta el tamaño de la fuente */
+    color: hwb(0 11% 25%);  /* Cambia el color a uno más oscuro */
+    font-weight: bold;        /* Asegura que el texto esté en negrita */
+    text-align: center;       /* Centra el texto */
+    margin-top: 20px;         /* Añade un margen superior */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra sutil */
+    padding: 10px;            /* Añade un relleno para darle más espacio */
+    border-bottom: 3px solid #007bff; /* Agrega una línea inferior de color */
 }
 
 .search-form {
@@ -52,31 +61,27 @@ h1, h2 {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
-    background-color: #111;
-    color: #00aaff;
+    font-size: 1rem; /* Usando rem para escalabilidad */
 }
 
 .search-form button {
     grid-column: span 2;
-    background-color: #007bff;
+    background-color: #2f6299;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
 }
 
 .search-form button:hover {
-    background-color: #0056b3;
+    background-color: #3371b3;
 }
 
 .results {
     margin-top: 20px;
+    flex-grow: 1; /* Hace que la sección de resultados ocupe el espacio disponible */
     min-height: 200px; 
     max-height: 400px; 
     overflow-y: auto;
-    background-color: rgba(0, 0, 20, 0.6);
-    padding: 15px;
-    border-radius: 12px;
-
 }
 
 .result-header, .result-row {
@@ -92,66 +97,25 @@ h1, h2 {
 }
 
 .result-header {
-    background-color: #0056b3;
+    background-color: #f0f0f0;
     font-weight: bold;
-    color: #333;
+    color: hsl(290, 72%, 24%);
 }
 
 .result-row {
-    background-color: rgba(0, 0, 20, 0.5);
-    color: #CCCCCC;
+    background-color: #fafafa;
 }
 
 .result-row:nth-child(even) {
-    background-color: rgba(0, 0, 20, 0.4);
+    background-color: #f1f1f1;
 }
 
-/* Estilo para el <select> y sus opciones */
-select {
-    width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    color: #00aaff; /* Texto azul brillante */
-    background-color: #111; /* Fondo oscuro */
-    border: 1px solid #ffffff; /* Borde oscuro */
-    border-radius: 4px;
-    appearance: none; /* Oculta el estilo predeterminado del navegador */
-    -webkit-appearance: none; /* Para navegadores basados en WebKit */
-    -moz-appearance: none; /* Para Firefox */
-}
+@media screen and (max-width: 768px) {
+    .search-form {
+        grid-template-columns: 1fr; /* Los inputs se apilan en pantallas pequeñas */
+    }
 
-/* Flecha personalizada del <select> (puede que no funcione en todos los navegadores) */
-select::-ms-expand {
-    display: none; /* Oculta la flecha en IE y Edge */
-}
-
-select:hover {
-    border-color: #00aaff; /* Borde cambia al azul brillante al pasar el ratón */
-}
-
-option {
-    background-color: #111; /* Fondo oscuro en las opciones desplegables */
-    color: #00aaff; /* Texto azul brillante */
-}
-
-/* Si quieres personalizar un menú desplegable dentro de un formulario */
-.search-form select {
-    background-color: #111;
-    color: #00aaff;
-}
-
-.btn-mapa {
-    display: inline-block;
-    padding: 10px 20px;  
-    background-color: #111;  
-    color: #00aaff; 
-    text-align: center; 
-    text-decoration: none;  
-    border-radius: 100px;  
-    font-size: 14px;  
-    transition: background-color 0.3s ease;  
-}
-
-.btn-mapa:hover {
-    background-color: #0026ff;
+    .result-header, .result-row {
+        grid-template-columns: 1fr 1fr; /* Ajusta las columnas de los resultados en pantallas pequeñas */
+    }
 }
